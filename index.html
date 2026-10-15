@@ -174,7 +174,16 @@
     </div>
 
     <script>
-        // Schwebende Hintergrund-Herzen erzeugen
+        const RICHTIGES_PASSWORT = "Halloween";
+
+        let eingabe = prompt("Gib das geheime Passwort ein, um die Überraschung zu öffnen: ❤️");
+
+        if (eingabe !== RICHTIGES_PASSWORT) {
+            alert("Falsches Passwort! 😜");
+            document.body.innerHTML = "<h1 style='text-align:center; margin-top:20vh; font-family:sans-serif; color:#d81b60;'>Falsches Passwort! 🔒<br><br><span style='font-size:16px; color:#555;'>Frag den Programmierer nach dem richtigen Code! 😉</span></h1>";
+            throw new Error("Falsches Passwort!");
+        }
+        
         const heartsContainer = document.getElementById('hearts-container');
         const heartIcons = ['❤️', '💖', '💕', '💗', '💓', '💙'];
         
